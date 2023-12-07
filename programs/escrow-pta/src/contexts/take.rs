@@ -9,7 +9,7 @@ impl<'info> Take<'info> {
     pub fn take(&mut self, bumps: &TakeBumps) -> Result<()> {
         self.mask.open_asks -= 1;
 
-        //check to see if balance is greater than ask
+        //check to see if amount is less than ask
         if self.maker_this_ta.amount < self.task.this {
             //close task account and give taker the rent
             return Ok(());
